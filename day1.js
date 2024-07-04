@@ -202,7 +202,7 @@ let foundAge = ages3.find((age)=>{
     return age === 16
 })
 
-//Rodger's class week 2 phase 1 
+//Rodger's class week 2 phase 1 week 1
 // map, filter, find.
 
 const students = [
@@ -280,4 +280,156 @@ console.log(activeStudent)
 //once it gets the first match of your condition, it terminates, does not go to the next one. e.g in the names of isActive, it just returns the first true,(the first name)
 
 const oddNumber = numbersArr.find((num) => num % 2 === 1);
-const oddNumbers = numbersArr.filter()
+//const oddNumbers = numbersArr.filter()
+
+
+//WEDNESDAY
+//1. Reduce method- used to summarise and aggregate dta in an array. it returns a single value. filter-array, find method- returns a single value. does not mutate or change the data/array.
+//2. Destructuring
+//3. Front end devt
+
+/*Reduce method
+*sum of all numbers in our numArr
+*average grade for all students
+*average grade for active students
+*count the number of students for each favorite lang
+
+*find the student with the highest grade
+*get a list of all active students' names
+
+//syntax: 1. array.reduce(callbackFn)
+          2.array.reduce(callbackFn, initialValue)
+*/
+//sum of all numbers in our numArr
+const sumArr = numbersArr.reduce((acc, currentElement) => {
+    //console.log(acc) //to show all the iterations
+    return acc + currentElement;
+
+}, 0);// initial value doesn't have to be 0. if you say10, it means we are adding 10+1, 10+2, 10+3...
+console.log(sumArr)
+
+//average grade for all students
+//average grade for active students
+const totalGradeAllStudents = students.reduce((acc, student) => {
+    return acc + student.gradeOutOfTen;
+}, 0);
+console.log(totalGradeAllStudents / students.length)
+
+const totalGradeActive = students.reduce ((acc, student) => {
+    if (student.isActive){
+        acc.sum += student.gradeOutOfTen;
+        acc.count += 1;
+    }
+    return acc;
+},
+{sum: 0, count: 0},
+)
+console.log(totalGradeActive)
+
+//use a ternary operator to confirm if the totalcount of the aactive students is greater than zero
+//const averageGradeStudents = 
+
+
+//spread operator ... on arrays
+let arr = ['1', '2', '3', '4', '5']
+let arr2 = arr
+
+arr2.push(6) // same as arr.push(6)
+
+console.log(arr, arr2)
+
+//the spread operator therefore makes a copy of the initial array.
+let arr21 = [...arr, 6]
+console.log(arr21)
+
+//spread operator on objects
+let persons = {
+    name: 'Lewis',
+
+
+}
+let person2 = persons
+
+console.log(persons, person2);
+
+// ...to change person2.//used to add secData but adding more info. like nationality, political party, nationalID...etc.
+let person21 = {...persons, name: 'Gavin', age: 20}
+console.log(person21)
+
+//Destructuring-alloes you to pull from arrays or objects in cases of large data, using attributes
+console.log(person.firstname, person.lastName, person.isActive)
+
+const { firstName, lastName, isActive } = person;
+console.log(firstName)
+console.log(lastName)
+console.log(isActive)
+
+const [num1,num2] = arr
+console.log(num1, num2)
+
+//assigning a funcion default values
+function gradeCalculator(grade = 100, weight = 0.2){
+    return grade * weight
+}
+console.log(gradeCalculator(98));
+
+//spread operator as functin argument
+//function grade() {}
+let values = [10, 0.2]
+console.log(gradeCalculator(...values))
+
+
+//REST OPERATOR - uses the spread opertor syntax
+function displayNames (name1, name2, ...rest){
+    console.log(name1)
+    console.log(name2)
+    console.log(rest)
+    console.log(rest.length)
+}
+let namesArr = ['toto', 'alvin', 'mildred', 'millie', 'angie']
+displayNames(...namesArr)
+
+//front-end and the 3 pillars of Web
+/* focuses on the UI */
+
+
+
+
+//THURSDAY- RODGERS
+//EVENTS
+/*caps, enter, mouse, touchpad,
+ *clicking on buttons, 
+ *submitting of forms, 
+ *handling a keypress etc
+ *mouse/touchpad
+ */
+ /* --> methods such as addEventListener
+    eg. document.addEventListener('type', callbackFn)
+  
+ //grab our element-button
+
+ const clickButtonFn = () ==> {
+    const btn = document.getElementById('button');
+    //console.log(btn);
+
+    //btn.addEventListener('click', browserAlert);
+
+    const browserAlert = ( => {
+        alert('I was clicked')
+    })
+
+    document.getElementById('button_2').addEventListener('click')
+ }
+
+ clickButtonFn().........
+ 
+
+ --> DOMContentLoaded
+ include everything inside the DOMContentLoaded 
+
+
+
+
+
+ */
+

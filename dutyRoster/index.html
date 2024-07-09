@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty Roster</title>
+</head>
+<body>
+    <h1>Duty Roster</h1>
+    <form action="" id="dutyForm">
+        <input type="hidden" name="duty" id="duty_id">
+        <input type="text" name="username" id="username" placeholder="username">
+        <input type="text" name="cleaning_time" id="cleaning_time" placeholder="cleaning_time">
+        <input type="text" name="duty" id="duty" placeholder="duty">
+        <button type="submit">Add/update</button>
+    </form>
+    <hr>
+    <table id="dutyTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Cleaning_time</th>
+                <th>Duty</th>
+                <th>Action</th><!-- Edit or delete -->
+            </tr>
+        </thead>
+        <hr>
+        <tbody>
+            <tr>
+                <td>Elvis</td>
+                <td>After Breko</td>
+                <td>Clean house</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script src="./script.js">
+        
+    </script>
+</body>
+</html>

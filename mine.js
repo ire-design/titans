@@ -137,3 +137,96 @@ myNumbers = ['1.69', '2', '3', '5', '70']
 
 finalOne = Math.floor(myNumbers [0]);
 console.log (finalOne)
+
+
+//FUNCTIONS
+const welcomeMessage = function(){
+  console.log('karibu sana')
+}
+welcomeMessage()
+
+
+//function showMessage(from, text){
+  //alert(from, text)
+//}
+
+//showMessage('Mwikali', 'hawayu')
+
+/* Default values*/
+//function showMessage(from, text = "no text given") {
+  //alert( ${from} ${text} );
+//}
+
+//showMessage("Ann"); // Ann: no text given
+
+/* Returning a value*/
+function sum(num11, num12){
+  return num11 + num12
+}
+let theSum = sum(2, 4)
+  console.log(theSum);
+
+
+  const weatherToday = 'rainy'
+  function exerciseDog(dogName, dogBreed){
+    if (weatherToday === 'rainy'){
+      return `${dogName} did not exercise due to rain`
+    }
+  }
+
+  const finalSentence = exerciseDog("Byron", "poodle")
+  console.log(finalSentence)
+
+//FINDING ARRAY ELEMENTS
+/* Array.prototype.indexOf()
+  * Array.prototype.find()
+*/
+
+// Array.prototype.filter()
+const students = [
+  {
+    name: 'Iyiola Ebenezer',
+    isActive: true,
+    favLanguage: 'JavaScript',
+    gradeOutOfTen: 9,
+  },
+  {
+    name: 'David Ochieng',
+    isActive: false,
+    favLanguage: 'Java',
+    gradeOutOfTen: 8.7,
+  },
+  {
+    name: 'Mark Wanjiru',
+    isActive: true,
+    favLanguage: 'JavaScript',
+    gradeOutOfTen: 9.2,
+  },
+];
+//filter all active students 
+const activeStudents = function (arr) {
+  for (const student of arr){
+    if (student.isActive){
+      console.log(student)
+    }
+  }
+}
+activeStudents(students)
+//filter yenyewe
+const activeStudents1 = students.filter((student) => {
+  if (student.isActive){
+          return student;
+      }
+})
+.map((student) => student.name);
+console.log(activeStudents1)
+
+
+const skiSchool = ["aki", "guadalupe", "lei", "aalam"];
+const rollCall = skiSchool.map((student) => {
+  return student + " the skier";
+});
+console.log(rollCall)
+//shorter way of the above
+const skiSchool1 = ["aki", "guadalupe", "lei", "aalam"];
+const rollCall1 = skiSchool1.map((student) => student + " the skier")

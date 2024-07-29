@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const formData = new FormData(dutyForm)
 
-            const duty = {
+            //get data id from form to be used in updating a data
+            const duty_id = formData.get('duty_id')
+            
+            //data to be sent to the server
+            const dutyData = {
                 name: formData.get('username'),
                 cleaning_time: formData.get('cleaning_time'),
                 duty: formData.get('duty')
@@ -54,8 +58,26 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     //event listener to duty table body (click event)
-    dutyTableBody.addEventListener('click', () => {
-        alert('I am clicked')
+    // populate the form for editing
+    dutyTableBody.addEventListener('click', (event) => {
+        //alert('I am clicked')
+        const target = event.target
+        const id = target.dataset.id
+
+        )
+        
+        fetch(`http://localhost:3000/duties/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            if(target.classList.contains('edit')){
+                //should populate the form
+                document.getElementById('username').value = data.name
+                document.getElementById('cleaning_time').value = data.
+
+            }else if (target.classList.contains('delete')){
+                //delete logic here
+            } 
+        })
     })
 
 

@@ -273,7 +273,6 @@ const activeStudent = students.filter(function (student) {
     }
 })
 .map((student) => student.name);//you use map, so you have extracted all elements,unlike in filter. then now decide what you want, like the name here.
-
 console.log(activeStudent)
 
 //find method
